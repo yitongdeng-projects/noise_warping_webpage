@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>Neural Flow Maps</title>
+    <link rel="icon" type="image/x-icon" href="favicon.png">
+
+    <meta name="description" content="Neural Flow Maps">
+    <meta name="keywords" content="Neural Flow Maps">
+    <meta name="author" content="Neural Flow Maps">
+
+    <link rel="icon" type="image/png" href="../../img/favicon.png">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="preload" href="https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap" as="style" type="text/css" crossorigin>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#157878">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="stylesheet" href="/assets/css/style.css?v=59d19899587930b4db9dc12c8b8586882cf35efb">
+    <link rel="shortcut icon" href="/favicon.ico">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- START: Styles -->
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,400i,700,700i%7cWork+Sans:400,500,700" rel="stylesheet" type="text/css">
+    
+    <link rel="stylesheet" href="assets/css/combined.css">
+    <link rel="stylesheet" href="assets/css/button.css">
+
+    <!-- END: Styles -->
+</head>
+
+<style>
+    .myFont {
+        font-family: Tahoma, sans-serif;
+        font-variant: small-caps;
+    }
+
+    .myFont2 {
+        font-family: Tahoma, sans-serif; 
+    }
+    .courier {
+        font-family: 'Courier New', Courier, monospace; margin-bottom: 2cm;
+    }
+    .responsive {
+        max-width: 100%;
+        height: auto;
+    }
+</style>
+
+<body>
+    <div class="nk-main">
+        <div class="nk-gap-4"></div>
+        <div class="container">
+            <div class="col-lg-12">
+                <div class="bg-white">
+					<div class="col-md-12 column" style="margin-top: 0px; text-align: center" >
+                        <h1> <span class = "myFont">
+                            Infinite-Resolution Integral Noise Warping<br>for Diffusion Models
+                        </h1>
+                        <div class="col-md-12 column" style="margin-top: 2px; margin-bottom: 12px">
+                            <h4><span class = "myFont2">ICLR 2025</span></h4>
+                        </div>
+                        <div class="col-md-12 column" style="margin-top: 2px; margin-bottom: 12px">
+                                <h6>
+                                <span class = "myFont2"><a href="https://yitongdeng.github.io/">Yitong Deng</a><sup>1,2</sup>, 
+                                    <a href="https://physbam.stanford.edu/~wl1915/">Winnie Lin</a><sup>1</sup>, 
+                                    <a href="https://people.csail.mit.edu/lingxiao/">Lingxiao Li</a><sup>1</sup>, 
+                                    <a href="https://dsmirnov.me">Dmitriy Smirnov</a><sup>1</sup>, 
+                                    <a href="https://ryanndagreat.github.io">Ryan Burgert</a><sup>3,4</sup>,
+                                    <a href="https://ningyu1991.github.io">Ning Yu</a><sup>3</sup>,
+                                    Vincent Dedun<sup>1</sup>,
+                                    and Mohammad H. Taghavi</a><sup>1</sup>
+                                </span>
+                                </h6>
+                            <div style="line-height:65%;">
+                                <br>
+                            </div>
+                            <h6><span class = "myFont2"><sup>1</sup> Netflix; <sup>2</sup> Stanford University; <sup>3</sup> Netflix Eyeline Studios; <sup>4</sup> Stony Brook University </span></a></h6>
+                        </div> 
+                    </div>
+                    <div class="col-md-12 column"><h6></h6></div> 
+                    <div class="col-md-12 column" style="margin-top: 0px">
+                        <img src="teaser_webpage.jpg" width="100%">
+                    </div> 
+                    <div class="col-md-12 column" style="margin-top: 12px">
+                        <hr>
+                    </div> 
+                    <div class="col-md-12 column" style="margin-top: 15px">
+                        <h5><span class = "myFont">Abstract</span></h5>
+                    </div> 
+                    <div class="col-md-12 column">
+                        <p>
+                            <span class = "myFont2">
+                                Adapting pretrained image-based diffusion models to generate temporally consistent videos has become an impactful generative modeling research direction. Training-free noise-space manipulation has proven to be an effective technique, where the challenge is to preserve the Gaussian white noise distribution while adding in temporal consistency. Recently, Chang et al. (2024) formulated this problem using an integral noise representation with distribution-preserving guarantees, and proposed an upsampling-based algorithm to compute it. However, while their mathematical formulation is advantageous, the algorithm incurs a high computational cost. Through analyzing the limiting-case behavior of their algorithm as the upsampling resolution goes to infinity, we develop an alternative algorithm that, by gathering increments of multiple Brownian bridges, achieves their infinite-resolution accuracy while simultaneously reducing the computational cost by orders of magnitude. We prove and experimentally validate our theoretical claims, and demonstrate our method's effectiveness in real-world applications. We further show that our method can readily extend to the 3-dimensional space.                        
+                            </span>
+                        </p>
+                    </div>
+
+                    <div class="col-md-12 column" style="margin-top: 0px;">
+                        <h5><span class = "myFont">Paper</span></h5>
+                    </div>
+
+                    <div class="col-md-12 column">
+                        <p>
+                            <!-- <span class = "myFont2">
+                                [<a href="assets/paper/NFM_v1.pdf">PDF</a>]                        
+                            </span> -->
+                            <a href="https://openreview.net/pdf?id=Y6LPWBo2HP"><img src="assets/icons/paper_thumbnail.png" style="width:100px"></a>
+                        </p>
+                    </div>
+                    
+
+                    <div class="col-md-12 column" style="margin-top: 0px;">
+                        <h5><span class = "myFont">Code</span></h5>
+                    </div>
+
+                    <div class="col-md-12 column">
+                        <p>
+                            <a href="https://github.com/yitongdeng-projects/infinite_resolution_integral_noise_warping_code"><img src="assets/icons/github-mark.png" style="width:45px"></a>
+                        </p>
+                    </div>
+
+                    <div class="col-md-12 column" style="margin-top: 30px;">
+                        <h5><span class = "myFont">Video Results</span></h5>
+                    </div>
+
+                    <div class="col-md-12 column" style="margin-top: 12px">
+                    	<style>
+                    		.videoWrapper {
+							  position: relative;
+							  padding-bottom: 56.0%;
+							  /* 16:9 */
+							  /* padding-top: 10px; */
+							  height: 0;
+							}
+
+							.videoWrapper iframe {
+							  position: absolute;
+							  top: 0;
+							  left: 100;
+							  width: 99.46%;
+							  height: 99.8%;
+							}
+					    </style>
+                    	<div class="videoWrapper">
+  							<iframe src="https://www.youtube.com/embed/C8oyE_UmzyI?si=804Y5BJ-YoSwkD6G" title="video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+						</div>
+                    </div>   
+
+                    <div class="col-md-12 column" style="margin-top: 28px">
+                        <h5><span class = "myFont">Citation</span></h5>
+                        <div class="col-md-12 column">
+                            <div class="courier ">
+
+    @misc{deng2024infiniteresolutionintegralnoisewarping,<br>
+        &nbsp;title={Infinite-Resolution Integral Noise Warping for Diffusion Models},<br>
+        &nbsp;author={Yitong Deng and Winnie Lin and Lingxiao Li and Dmitriy Smirnov and Ryan Burgert and Ning Yu and Vincent Dedun and Mohammad H. Taghavi},<br>
+        &nbsp;year={2024},<br>
+        &nbsp;eprint={2411.01212},<br>
+        &nbsp;archivePrefix={arXiv},<br>
+        &nbsp;primaryClass={cs.CV},<br>
+        &nbsp;url={https://arxiv.org/abs/2411.01212},<br>
+    }
+                            </div>
+                        </div>                      
+                    </div>           
+                </div>        
+            </div>
+
+      
+
+		<div class="nk-gap-4"></div>
+	</div>
+    <footer class="nk-footer">
+
+
+        <div class="nk-footer-cont">
+            <div class="container text-xs-center">
+
+                <div class="nk-footer-text">
+                    <p>Copyright &copy Yitong Deng</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    </div>
+
+
+
+
+    <!-- START: Scripts -->
+
+    <script src="assets/js/combined.js"></script>
+    
+    <!-- END: Scripts -->
+
+
+</body>
+
+</html>
